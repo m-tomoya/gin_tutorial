@@ -6,5 +6,29 @@
 </head>
 <body>
   <h1>Hello World!!!</h1>
+  <h2>ADD</h2>
+  <form method="post" action="/new">
+    <p>Content
+      <input type="text" name="text" size="30" placeholder="Input Content here!">
+    </p>
+    <p>Status
+      <select name="status">
+        <option value="uncomplete">UNCOMPLETE</option>
+        <option value="processing">PROCESSING</option>
+        <option value="completed">COMPLETED</option>
+      </select>
+    </p>
+    <p>
+      <input type="submit" value="Send">
+    </p>
+  </form>
+  <ul>
+    {{ range .todos }}
+    <li> CONTENT: {{ .Text }}, STATUS: {{ .Status }}
+      <label><a href="/detail/{{.ID}}">EDIT</a></label>
+      <label><a href="/delete_check/{{.ID}}">DELETE</a></label>
+    </li>
+    {{end}}
+  </ul>
 </body>
 </html>
