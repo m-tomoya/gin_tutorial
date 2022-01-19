@@ -24,7 +24,7 @@
   </form>
   <ul>
     {{ range .todos }}
-    <li>CONTENT: {{ .Text }}, STATUS: {{ .Status }}
+    <li> CONTENT: {{ .Text }}, STATUS: {{ .Status }}
       <label><a href="/detail/{{.ID}}">EDIT</a></label>
       <label><a href="/delete_check/{{.ID}}">DELETE</a></label>
     </li>
